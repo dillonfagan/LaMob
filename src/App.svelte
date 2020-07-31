@@ -10,10 +10,10 @@
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
 		background-color: #218c74;
+		display: block;
+		height: 98vh;
+		padding-top: 2vh;
 	}
 
 	h1 {
@@ -21,11 +21,6 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+		margin-top: 0;
 	}
 </style>
