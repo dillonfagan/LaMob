@@ -11,21 +11,24 @@
 
 	function stopTimer(interval) {
 		clearInterval(interval);
-		document.getElementById("main")
-			.style
-			.backgroundColor = "#b33939";
+		setBackgroundColor("#b33939");
+
 		const button = document.getElementById("button");
 		button.innerText = "Reset";
 		button.onclick = reset;
+	}
+
+	function setBackgroundColor(color) {
+		document.getElementById("main")
+			.style
+			.backgroundColor = color;
 	}
 
 	initializeTimer();
 
 	let interval;
 	function start() {
-		document.getElementById("main")
-			.style
-			.backgroundColor = "#474787";
+		setBackgroundColor("#474787");
 
 		interval = setInterval(() => {
 			if (time === 0) {
@@ -35,6 +38,7 @@
     		time -= 1;
   		},1000);
 	}
+
 	function reset() {
 		location.reload();
 	}
