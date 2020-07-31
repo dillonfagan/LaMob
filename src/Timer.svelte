@@ -14,6 +14,9 @@
 		document.getElementById("main")
 			.style
 			.backgroundColor = "#b33939";
+		const button = document.getElementById("button");
+		button.innerText = "Reset";
+		button.onclick = reset;
 	}
 
 	initializeTimer();
@@ -45,8 +48,7 @@
 
 <section>
 	<h2 class="time">{formatTime(time)}</h2>
-	<button on:click={start}>Start</button>
-	<button on:click={reset}>Reset</button>
+	<button id="button" on:click={start}>Start</button>
 </section>
 
 <style>
