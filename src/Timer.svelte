@@ -9,17 +9,31 @@
 		time = lengthInSeconds;
 	}
 
+	function stopTimer(interval) {
+		clearInterval(interval);
+		document.getElementById("main")
+			.style
+			.backgroundColor = "#b33939";
+	}
+
 	initializeTimer();
 
 	let interval;
 	function start() {
+		document.getElementById("main")
+			.style
+			.backgroundColor = "#474787";
+
 		interval = setInterval(() => {
 			if (time === 0) {
-				clearInterval(interval);
+				stopTimer(interval);
 				return;
     		}
     		time -= 1;
   		},1000);
+	}
+	function reset() {
+		location.reload();
 	}
 
 	function formatTime(timeInSeconds) {
@@ -30,12 +44,15 @@
 </script>
 
 <section>
-	<p class="time">{formatTime(time)}</p>
+	<h2 class="time">{formatTime(time)}</h2>
 	<button on:click={start}>Start</button>
+	<button on:click={reset}>Reset</button>
 </section>
 
 <style>
 	.time {
-		color:white;
+		color: white;
+		font-weight: normal;
+		font-style: italic;
 	}
 </style>

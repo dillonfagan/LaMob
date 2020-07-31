@@ -3,7 +3,7 @@
 	export let name;
 </script>
 
-<main>
+<main id="main">
 	<h1>La Mob</h1>
 	<Timer />
 </main>
