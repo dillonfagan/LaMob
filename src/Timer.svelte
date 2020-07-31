@@ -5,7 +5,7 @@
 
 	let time;
 	function initializeTimer() {
-		const lengthInSeconds = minutesToSeconds(0.1);
+		const lengthInSeconds = minutesToSeconds(0);
 		time = lengthInSeconds;
 	}
 
@@ -29,6 +29,8 @@
 	let interval;
 	function start() {
 		setBackgroundColor("#474787");
+		const timeInput = parseFloat(document.getElementById("time-input").value);
+		time = minutesToSeconds(timeInput);
 
 		interval = setInterval(() => {
 			if (time === 0) {
@@ -52,6 +54,7 @@
 
 <section>
 	<h2 class="time">{formatTime(time)}</h2>
+	<input id="time-input" value="0.1" />
 	<button id="button" on:click={start}>Start</button>
 </section>
 

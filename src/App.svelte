@@ -1,6 +1,5 @@
 <script>
 	import Timer from './Timer.svelte';
-	export let name;
 </script>
 
 <main id="main">
