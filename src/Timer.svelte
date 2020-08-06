@@ -53,15 +53,7 @@
 </script>
 
 <section>
-	<h2 class="time">{formatTime(time)}</h2>
-	<input id="time-input" value="0.1" />
-	<button id="button" on:click={start}>Start</button>
+	<div class="text-2xl text-white">{formatTime(time)}</div>
+	<input id="time-input" value="0.1" class="text-white py-2 px-0" />
+	<button id="button" on:click={start} class="bg-white py-2 px-4 mt-4">Start</button>
 </section>
-
-<style>
-	.time {
-		color: white;
-		font-weight: normal;
-		font-style: italic;
-	}
-</style>
