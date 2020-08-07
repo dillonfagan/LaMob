@@ -54,6 +54,6 @@
 
 <section>
 	<div class="text-3xl text-white w-full text-center">{formatTime(time)}</div>
-	<input id="time-input" value="0.1" class="py-2 px-4 bg-white rounded-full" />
+	<input id="time-input" value="0.1" class="py-2 px-4 text-xl text-white bg-transparent border-b-2" />
 	<button id="button" on:click={start} class="bg-white py-2 px-6 mt-4 rounded-full">Start</button>
 </section>
