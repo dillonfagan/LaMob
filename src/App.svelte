@@ -2,25 +2,15 @@
 	import Timer from './Timer.svelte';
 </script>
 
-<main id="main">
-	<h1>La Mob</h1>
-	<Timer />
+<main id="main" class="w-full h-full p-16 bg-green-600 flex items-center justify-center">
+	<div class="mw-lg">
+		<h1 class="text-6xl text-white text-center uppercase italic">La Mob</h1>
+		<Timer />
+	</div>
 </main>
 
-<style>
-	main {
-		text-align: center;
-		background-color: #218c74;
-		display: block;
-		height: 98vh;
-		padding-top: 2vh;
-	}
-
-	h1 {
-		color: #ffffff;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-		margin-top: 0;
-	}
+<style global>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
 </style>
