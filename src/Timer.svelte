@@ -3,7 +3,7 @@
 	import Time from './time.js';
 
 	let rawTimeInput = 0.1;
-	let time = Time.minutesToSeconds(0);
+	let time;
 	let interval;
 
 	function start() {
