@@ -15,15 +15,11 @@
 
 		interval = setInterval(() => {
 			if (time === 0) {
-				stopTimer(interval);
+				clearInterval(interval);
 				return;
     		}
     		time -= 1;
 		},1000);
-	}
-
-	function stopTimer(interval) {
-		clearInterval(interval);
 	}
 
 	function reset() {
