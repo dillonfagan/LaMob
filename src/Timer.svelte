@@ -26,6 +26,6 @@
 
 <section>
 	<div class="text-3xl text-white w-full text-center">{Time.format(time)}</div>
-	<input id="time-input" bind:value={rawTimeInput} class="py-2 px-4 text-xl text-white bg-transparent border-b-2" />
-	<button id="button" on:click={$running ? reset : start} class="bg-white py-2 px-6 mt-4 rounded-full">{$running ? `Reset` : `Start`}</button>
+	<input bind:value={rawTimeInput} class="py-2 px-4 text-xl text-white bg-transparent border-b-2" />
+	<button on:click={$running ? reset : start} class="bg-white py-2 px-6 mt-4 rounded-full">{$running ? `Reset` : `Start`}</button>
 </section>
