@@ -22,7 +22,7 @@
 </script>
 
 <section>
-	<div class="text-3xl text-white w-full text-center" class:big={$running} class:hidden={!$running}>{Time.format(time)}</div>
+	<div class="text-5xl text-white w-full text-center" class:hidden={!$running}>{Time.format(time)}</div>
 	<div class="flex overflow-hidden py-2 px-4 bg-green-500 border-2 border-green-800 rounded-full" class:hidden={$running}>
 		<input type="text" bind:value={rawTimeInput} class="text-xl text-white bg-transparent outline-none" />
 		<button on:click={start} class="text-green-800 hover:text-white rounded-full">
@@ -36,9 +36,5 @@
 <style>
 	.hidden {
 		@apply hidden;
-	}
-
-	.big {
-		@apply text-5xl;
 	}
 </style>
