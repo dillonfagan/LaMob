@@ -22,7 +22,7 @@
 </script>
 
 <section>
-	<div class="text-3xl text-white w-full text-center" class:big={$running}>{Time.format(time)}</div>
+	<div class="text-3xl text-white w-full text-center" class:big={$running} class:hidden={!$running}>{Time.format(time)}</div>
 	<div class:hidden={$running}>
 		<input bind:value={rawTimeInput} class="py-2 px-4 text-xl text-white bg-transparent border-b-2" />
 		<button on:click={start} class="bg-white py-2 px-6 rounded-full">Start</button>
