@@ -6,15 +6,8 @@
 	const padWithZeroes = (number) => number.toString().padStart(2, '0');
 
 	let rawTimeInput = 0.1;
-	let time;
+	let time = minutesToSeconds(0);
 	let interval;
-
-	initializeTimer();
-
-	function initializeTimer() {
-		const lengthInSeconds = minutesToSeconds(0);
-		time = lengthInSeconds;
-	}
 
 	function start() {
 		running.set(true);
