@@ -5,16 +5,16 @@
 	let rawTimeInput = 0.1;
 	let rawMobbersInput = "";
 	let time;
-	let mobberIndex = 0;
 	let interval;
-
+	
+	let mobberIndex = 0;
 	let mobber;
 
 	function start() {
 		running.set(true);
 		mobbers.set(listMobbers());
 		mobber = $mobbers[mobberIndex];
-		console.log($mobbers);
+
 		time = Time.minutesToSeconds(rawTimeInput);
 
 		interval = setInterval(() => {
