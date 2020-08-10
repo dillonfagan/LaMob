@@ -5,11 +5,15 @@
 	let rawTimeInput = 0.1;
 	let rawMobbersInput = "";
 	let time;
+	let mobberIndex = 0;
 	let interval;
+
+	let mobber;
 
 	function start() {
 		running.set(true);
 		mobbers.set(listMobbers());
+		mobber = $mobbers[mobberIndex];
 		console.log($mobbers);
 		time = Time.minutesToSeconds(rawTimeInput);
 
@@ -34,6 +38,7 @@
 
 <section>
 	<div class="text-5xl text-white w-full text-center" class:hidden={!$running}>{Time.format(time)}</div>
+	<div class="text-3xl text-purple-900 w-full text-center" class:hidden={!$running}>{mobber}</div>
 
 	<div class="flex overflow-hidden py-2 px-4 mb-4 bg-green-500 border-2 border-green-800 rounded-full" class:hidden={$running}>
 		<input type="text" placeholder="Mobbers" bind:value={rawMobbersInput} class="text-xl text-white placeholder-green-800 bg-transparent outline-none" />
