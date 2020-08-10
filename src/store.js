@@ -2,4 +2,6 @@ import { writable } from 'svelte/store';
 
 let running = writable(false);
 
-export {running}
+let mobbers = writable([]);
+
+export {running, mobbers}

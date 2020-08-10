@@ -1,13 +1,16 @@
 <script>
-	import { running } from './store.js';
+	import { running, mobbers } from './store.js';
 	import Time from './time.js';
 
 	let rawTimeInput = 0.1;
+	let rawMobbersInput = "";
 	let time;
 	let interval;
 
 	function start() {
 		running.set(true);
+		mobbers.set(listMobbers());
+		console.log($mobbers);
 		time = Time.minutesToSeconds(rawTimeInput);
 
 		interval = setInterval(() => {
@@ -19,10 +22,23 @@
     		time -= 1;
 		},1000);
 	}
+
+	function listMobbers() {
+		if (!rawMobbersInput.includes(','))
+			return [rawMobbersInput.trim()]
+		return rawMobbersInput
+			.replaceAll(' ', '')
+			.split(',');
+	}
 </script>
 
 <section>
 	<div class="text-5xl text-white w-full text-center" class:hidden={!$running}>{Time.format(time)}</div>
+
+	<div class="flex overflow-hidden py-2 px-4 mb-4 bg-green-500 border-2 border-green-800 rounded-full" class:hidden={$running}>
+		<input type="text" placeholder="Mobbers" bind:value={rawMobbersInput} class="text-xl text-white placeholder-green-800 bg-transparent outline-none" />
+	</div>
+
 	<div class="flex overflow-hidden py-2 px-4 bg-green-500 border-2 border-green-800 rounded-full" class:hidden={$running}>
 		<input type="text" bind:value={rawTimeInput} class="text-xl text-white bg-transparent outline-none" />
 		<button on:click={start} class="text-green-800 hover:text-white rounded-full">
