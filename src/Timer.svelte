@@ -1,6 +1,7 @@
 <script>
 	import { running, mobbers } from './store.js';
 	import Time from './time.js';
+	import Field from './Field.svelte';
 
 	let rawTimeInput = 0.1;
 	let rawMobbersInput = "";
@@ -66,14 +67,9 @@
 		<input type="text" placeholder="Mobbers" bind:value={rawMobbersInput} class="text-xl text-white placeholder-green-800 bg-transparent outline-none" />
 	</div>
 
-	<div class="flex overflow-hidden py-2 px-4 bg-green-500 border-2 border-green-800 rounded-full" class:hidden={$running}>
-		<input type="text" bind:value={rawTimeInput} class="text-xl text-white bg-transparent outline-none" />
-		<button on:click={start} class="text-green-800 hover:text-white rounded-full">
-			<svg class="fill-current h-8 w-8" viewBox="0 0 20 20">
-				<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-			</svg>
-		</button>
-	</div>
+	<Field bind:value={rawTimeInput} on:click={start} hidden={$running} color="green">
+		<path slot="icon" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+	</Field>
 </section>
 
 <style>
