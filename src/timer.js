@@ -9,7 +9,3 @@ export function formatTime(timeInSeconds) {
 	const remainingSeconds = timeInSeconds % 60;
 	return `${padWithZeroes(minutes)}:${padWithZeroes(remainingSeconds)}`;
 }
-
-export function reset() {
-	running.set(false);
-}
