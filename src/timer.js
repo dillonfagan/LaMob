@@ -1,5 +1,3 @@
-import { running } from './store.js';
-
 export const minutesToSeconds = (minutes) => minutes * 60;
 const secondsToMinutes = (seconds) => Math.floor(seconds / 60);
 const padWithZeroes = (number) => number.toString().padStart(2, '0');

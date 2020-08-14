@@ -1,10 +1,10 @@
 <script>
-	import { running, waiting} from './store.js';
+	import { running, waiting } from './store.js';
 	import { minutesToSeconds, formatTime } from './timer.js'
 
 	let time = minutesToSeconds(0);
 	let interval;
-	let timeInput = 0.1;
+	let timeInput = 7;
 
 	function start() {
 		running.set(true);

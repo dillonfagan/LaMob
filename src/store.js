@@ -1,6 +1,4 @@
 import { writable } from 'svelte/store';
 
-let running = writable(false);
-let waiting = writable(false);
-
-export {running, waiting}
+export let running = writable(false);
+export let waiting = writable(false);
