@@ -28,8 +28,8 @@
 		<input bind:value={timeInput} class="py-2 px-4 text-xl text-white bg-transparent border-b-2" />
 		<button on:click={start} class="bg-white py-2 px-6 mt-4 rounded-full">Start</button>
 	</div>
-	<div class="w-full flex justify-center" class:hidden={!$waiting}>
-		<button class="bg-white py-2 px-6 mt-4 rounded-full" on:click={start}>Next</button>
+	<div class="w-full h-16 flex justify-center mt-4 items-center">
+		<button class:hidden={!$waiting} class="bg-white py-2 px-6 rounded-full" on:click={start}>Next</button>
 	</div>
 </section>
 
