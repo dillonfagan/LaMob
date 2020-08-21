@@ -34,7 +34,12 @@
 <section>
 	<div class="text-6xl text-white w-full text-center" class:hidden={!$running}>{formatTime(time)}</div>
 	<div class:hidden={$running}>
-		<input bind:value={timeInput} class="py-2 px-4 text-xl text-white bg-transparent border-b-2" type="number" min="1" max="50"/>
+		<input
+			bind:value={timeInput}
+			class="py-2 px-4 text-xl text-white bg-transparent border-b-2"
+			type="number"
+			min="1" max="50"
+		/>
 		<button on:click={start} class="bg-white py-2 px-6 mt-4 rounded-full">Start</button>
 	</div>
 	<div class="w-full h-16 flex justify-center mt-4 items-center">
