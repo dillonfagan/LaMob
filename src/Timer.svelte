@@ -1,9 +1,11 @@
 <script>
-	import { running, waiting } from './store.js';
+	import { running, waiting, mobbers, currentMobber } from './store.js';
 	import { minutesToSeconds, formatTime } from './timer.js'
 
+	let mobberIndex = 0;
 	let time = minutesToSeconds(0);
 	let interval;
+
 	let rawMobbersInput = "";
 	let timeInput = 7;
 	let laMusique = new Audio('./assets/AccordionSound.mp3');
@@ -12,10 +14,13 @@
 		mobbers.set(listMobbers());
 		running.set(true);
 		waiting.set(false);
+
+		currentMobber.set($mobbers[mobberIndex])
 		time = minutesToSeconds(timeInput);
 
 		interval = setInterval(() => {
 			if (time === 0) {
+				mobberIndex += 1;
 				laMusique.muted = false;
 				laMusique.play();
 				clearInterval(interval);
