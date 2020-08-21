@@ -1,4 +1,4 @@
-const { formatTime } = require('./timer');
+const { formatTime, minutesToSeconds } = require('./timer');
 
 test.each([
 	[60, "01:00"],
@@ -7,4 +7,13 @@ test.each([
 ])
 ('%i seconds -> %s', (seconds, expected) => {
 	expect(formatTime(seconds)).toBe(expected);
+});
+
+test.each([
+	[1, 60],
+	[0.5, 30],
+	[3, 180]
+])
+('%i minutes -> %i seconds', (minutes, expected) => {
+	expect(minutesToSeconds(minutes)).toBe(expected);
 });
