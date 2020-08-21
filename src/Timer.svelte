@@ -5,6 +5,7 @@
 	let time = minutesToSeconds(0);
 	let interval;
 	let timeInput = 7;
+	let laMusique = new Audio('./assets/AccordionSound.mp3');
 
 	function start() {
 		running.set(true);
@@ -13,6 +14,8 @@
 
 		interval = setInterval(() => {
 			if (time === 0) {
+				laMusique.muted = false;
+				laMusique.play();
 				clearInterval(interval);
 				waiting.set(true);
 				return;
@@ -20,7 +23,13 @@
     		time -= 1;
 		},1000);
 	}
+
+	const muteMusique = () => laMusique.muted = true;
 </script>
+
+<svelte:body
+	on:mouseenter={muteMusique}
+/>
 
 <section>
 	<div class="text-6xl text-white w-full text-center" class:hidden={!$running}>{formatTime(time)}</div>
