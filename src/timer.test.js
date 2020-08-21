@@ -1,6 +1,7 @@
 const { formatTime, minutesToSeconds } = require('./timer');
 
 test.each([
+	[0, "00:00"],
 	[60, "01:00"],
 	[30, "00:30"],
 	[90, "01:30"]
@@ -10,6 +11,7 @@ test.each([
 });
 
 test.each([
+	[0, 0],
 	[1, 60],
 	[0.5, 30],
 	[3, 180]
