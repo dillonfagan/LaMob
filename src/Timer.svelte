@@ -4,10 +4,12 @@
 
 	let time = minutesToSeconds(0);
 	let interval;
+	let rawMobbersInput = "";
 	let timeInput = 7;
 	let laMusique = new Audio('./assets/AccordionSound.mp3');
 
 	function start() {
+		mobbers.set(listMobbers());
 		running.set(true);
 		waiting.set(false);
 		time = minutesToSeconds(timeInput);
@@ -24,6 +26,14 @@
 		},1000);
 	}
 
+	function listMobbers() {
+		if (!rawMobbersInput.includes(','))
+			return [rawMobbersInput.trim()]
+		return rawMobbersInput
+			.replaceAll(' ', '')
+			.split(',');
+	}
+
 	const muteMusique = () => laMusique.muted = true;
 </script>
 
@@ -34,6 +44,10 @@
 <section>
 	<div class="text-6xl text-white w-full text-center" class:hidden={!$running}>{formatTime(time)}</div>
 	<div class:hidden={$running}>
+		<input
+			placeholder="La Mobbers"
+			bind:value={rawMobbersInput}
+		/>
 		<input
 			bind:value={timeInput}
 			class="py-2 px-4 text-xl text-white bg-transparent border-b-2"
