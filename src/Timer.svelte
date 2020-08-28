@@ -1,7 +1,8 @@
 <script>
 	import { running, waiting, mobbers, currentMobber } from './store.js';
-	import { minutesToSeconds, formatTime } from './timer.js'
-	import Music from './music.js'
+	import { minutesToSeconds, formatTime } from './timer.js';
+	import { listMobbers } from './mobbers.js';
+	import Music from './music.js';
 
 	let mobberIndex = 0;
 	let time = minutesToSeconds(0);
@@ -11,7 +12,7 @@
 	let timeInput = 7;
 
 	function start() {
-		mobbers.set(listMobbers());
+		mobbers.set(listMobbers(rawMobbersInput));
 		running.set(true);
 		waiting.set(false);
 
@@ -35,14 +36,6 @@
     		}
     		time -= 1;
 		},1000);
-	}
-
-	function listMobbers() {
-		if (!rawMobbersInput.includes(','))
-			return [rawMobbersInput.trim()]
-		return rawMobbersInput
-			.replaceAll(' ', '')
-			.split(',');
 	}
 </script>
 
