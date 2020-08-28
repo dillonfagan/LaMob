@@ -44,7 +44,6 @@
 			.replaceAll(' ', '')
 			.split(',');
 	}
-
 </script>
 
 <svelte:body
