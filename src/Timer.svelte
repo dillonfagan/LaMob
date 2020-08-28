@@ -1,6 +1,7 @@
 <script>
 	import { running, waiting, mobbers, currentMobber } from './store.js';
 	import { minutesToSeconds, formatTime } from './timer.js'
+	import Music from './music.js'
 
 	let mobberIndex = 0;
 	let time = minutesToSeconds(0);
@@ -8,7 +9,6 @@
 
 	let rawMobbersInput = "";
 	let timeInput = 7;
-	let laMusique = new Audio('./assets/AccordionSound.mp3');
 
 	function start() {
 		mobbers.set(listMobbers());
@@ -21,8 +21,7 @@
 		interval = setInterval(() => {
 			if (time === 0) {
 				mobberIndex += 1;
-				laMusique.muted = false;
-				laMusique.play();
+				Music.play();
 				clearInterval(interval);
 
 				if (mobberIndex === $mobbers.length)
@@ -46,11 +45,10 @@
 			.split(',');
 	}
 
-	const muteMusique = () => laMusique.muted = true;
 </script>
 
 <svelte:body
-	on:mouseenter={muteMusique}
+	on:mouseenter={Music.stop}
 />
 
 <section>
