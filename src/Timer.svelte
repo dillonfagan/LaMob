@@ -24,7 +24,14 @@
 				laMusique.muted = false;
 				laMusique.play();
 				clearInterval(interval);
-				waiting.set(true);
+
+				if (mobberIndex === $mobbers.length)
+				{
+					running.set(false);
+					currentMobber.set("La Mob");
+				}
+				else
+					waiting.set(true);
 				return;
     		}
     		time -= 1;
