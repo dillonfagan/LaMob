@@ -1,12 +1,12 @@
 <script>
-	import Timer from './Timer.svelte';
 	import { running, currentMobber } from './store';
+	import ViewController from './ViewController.svelte';
 </script>
 
 <main id="main" class="w-full h-full p-16 {$running ? "bg-purple-700" : "bg-green-600"} flex items-center justify-center">
 	<div class="mw-lg">
 		<h1 class="text-3xl text-white text-center uppercase italic">{$currentMobber}</h1>
-		<Timer />
+		<ViewController />
 	</div>
 </main>
 
