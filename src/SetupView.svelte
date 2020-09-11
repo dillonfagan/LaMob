@@ -1,8 +1,13 @@
 <script>
+	import State from './state';
+
 	let mobbersInput = "";
 	let timeInput = 7;
 
-	function start() {}
+	function start() {
+		const mobbers = [];
+		State.startRotation(mobbers, timeInput);
+	}
 </script>
 
 <input
