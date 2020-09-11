@@ -1,11 +1,12 @@
 <script>
 	import State from './state';
+	import { listMobbers } from './mobbers';
 
 	let mobbersInput = "";
 	let timeInput = 7;
 
 	function start() {
-		const mobbers = [];
+		const mobbers = listMobbers(mobbersInput);
 		State.startRotation(mobbers, timeInput);
 	}
 </script>
