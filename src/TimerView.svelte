@@ -26,7 +26,6 @@
 </script>
 
 <svelte:body
-	class="bg-purple-700"
 	on:mouseenter={Music.stop}
 />
 
