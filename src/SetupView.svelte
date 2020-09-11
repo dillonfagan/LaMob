@@ -11,6 +11,7 @@
 	}
 </script>
 
+<h1 class="text-3xl text-white text-center uppercase italic">La Mob</h1>
 <input
 	placeholder="La Mobbers"
 	bind:value={mobbersInput}
