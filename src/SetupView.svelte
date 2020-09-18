@@ -1,4 +1,5 @@
 <script>
+	import { getContext, setContext } from 'svelte';
 	import State from './state';
 	import { listMobbers } from './mobbers';
 
@@ -6,8 +7,13 @@
 	let timeInput = 7;
 
 	function start() {
-		const mobbers = listMobbers(mobbersInput);
-		State.startRotation(mobbers, timeInput);
+		const config = getContext('config');
+		config.mobbers.list = listMobbers(mobbersInput);
+		config.turnLength = timeInput;
+
+		setContext('config', config);
+
+		State.startRotation([], timeInput);
 	}
 </script>
 

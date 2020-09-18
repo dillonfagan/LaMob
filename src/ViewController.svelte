@@ -1,7 +1,17 @@
 <script>
-	import { onDestroy } from 'svelte';
+	import { setContext, onDestroy } from 'svelte';
 	import Background from './background';
 	import State from './state';
+
+	const config = {
+		mobbers: {
+			list: [],
+			index: 0
+		},
+		turnLength: 0
+	};
+
+	setContext('config', config);
 
 	let active;
 	let bgColor;
