@@ -19,3 +19,11 @@ test.each([
 ('%i minutes -> %i seconds', (minutes, expected) => {
 	expect(minutesToSeconds(minutes)).toBe(expected);
 });
+
+test('turns', () => {
+	const turnLength = 7;
+	const numberOfTurns = Math.floor(50 / turnLength);
+	const eggs = '🥚'.repeat(numberOfTurns);
+
+	expect(eggs).toBe('🥚🥚🥚🥚🥚🥚🥚');
+});
