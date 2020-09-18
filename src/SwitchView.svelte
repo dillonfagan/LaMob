@@ -4,16 +4,19 @@
 	import Music from './music.js';
 	import Background from './background';
 
-	Background.set("red-700");
+	Background.set("red-800");
 	Music.play();
 
 	const config = getContext('config');
 	const mobberIndex = config.mobbers.index;
 	const mobber = config.mobbers.list[mobberIndex];
-	const nextMobber = config.mobbers.list[mobberIndex + 1];
+	let nextMobberIndex = mobberIndex + 1;
+	if (nextMobberIndex > config.mobbers.list.length - 1)
+		nextMobberIndex = 0;
+	const nextMobber = config.mobbers.list[nextMobberIndex];
 
 	function next() {
-		config.mobbers.index += 1;
+		config.mobbers.index = nextMobberIndex;
 		setContext('config', config);
 
 		State.nextTurn();
