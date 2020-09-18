@@ -1,39 +1,55 @@
 <script>
-	import { running, waiting } from './store.js';
-	import { minutesToSeconds, formatTime } from './timer.js'
+	import { running, waiting, mobbers, currentMobber } from './store.js';
+	import { minutesToSeconds, formatTime } from './timer.js';
+	import { listMobbers } from './mobbers.js';
+	import Music from './music.js';
 
+	let mobberIndex = 0;
 	let time = minutesToSeconds(0);
 	let interval;
+
+	let rawMobbersInput = "";
 	let timeInput = 7;
-	let laMusique = new Audio('./assets/AccordionSound.mp3');
 
 	function start() {
+		mobbers.set(listMobbers(rawMobbersInput));
 		running.set(true);
 		waiting.set(false);
+
+		currentMobber.set($mobbers[mobberIndex])
 		time = minutesToSeconds(timeInput);
 
 		interval = setInterval(() => {
 			if (time === 0) {
-				laMusique.muted = false;
-				laMusique.play();
+				mobberIndex += 1;
+				Music.play();
 				clearInterval(interval);
-				waiting.set(true);
+
+				if (mobberIndex === $mobbers.length)
+				{
+					running.set(false);
+					currentMobber.set("La Mob");
+				}
+				else
+					waiting.set(true);
 				return;
     		}
     		time -= 1;
 		},1000);
 	}
-
-	const muteMusique = () => laMusique.muted = true;
 </script>
 
 <svelte:body
-	on:mouseenter={muteMusique}
+	on:mouseenter={Music.stop}
 />
 
 <section>
 	<div class="text-6xl text-white w-full text-center" class:hidden={!$running}>{formatTime(time)}</div>
 	<div class:hidden={$running}>
+		<input
+			placeholder="La Mobbers"
+			bind:value={rawMobbersInput}
+		/>
 		<input
 			bind:value={timeInput}
 			class="py-2 px-4 text-xl text-white bg-transparent border-b-2"
