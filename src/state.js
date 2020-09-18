@@ -1,5 +1,4 @@
 import { writable } from 'svelte/store';
-import { setContext, getContext } from 'svelte';
 import SetupView from './SetupView.svelte';
 import TimerView from './TimerView.svelte';
 
@@ -11,19 +10,11 @@ view.subscribe(newView => {
 
 const subscribe = view.subscribe;
 
-function startRotation(mobbersList, minutes) {
+function startRotation() {
 	view.set(TimerView);
-}
-
-function getCurrentMobber() {
-	const config = getContext('config');
-	const index = config.mobbers.index;
-
-	return config.mobbers.list[index];
 }
 
 export default {
 	subscribe,
-	startRotation,
-	getCurrentMobber
+	startRotation
 }

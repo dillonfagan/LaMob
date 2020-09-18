@@ -13,7 +13,7 @@
 
 		setContext('config', config);
 
-		State.startRotation([], timeInput);
+		State.startRotation();
 	}
 </script>
 
