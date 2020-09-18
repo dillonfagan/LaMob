@@ -9,13 +9,15 @@
 
 	const config = getContext('config');
 	const mobberIndex = config.mobbers.index;
-	const mobber = config.mobbers.list[mobberIndex];
+
 	let nextMobberIndex = mobberIndex + 1;
 	if (nextMobberIndex > config.mobbers.list.length - 1)
 		nextMobberIndex = 0;
+
 	const nextMobber = config.mobbers.list[nextMobberIndex];
 
 	function next() {
+		Music.stop();
 		config.mobbers.index = nextMobberIndex;
 		setContext('config', config);
 
@@ -27,5 +29,7 @@
 	on:mouseenter={Music.stop}
 />
 
-<div class="text-3xl text-white text-center uppercase italic">{mobber} - {nextMobber}</div>
-<button class="bg-white py-2 px-6 rounded-full" on:click={next}>Next</button>
+<div class="flex flex-col justify-center">
+	<div class="text-4xl text-white text-center uppercase italic">{nextMobber}</div>
+	<button class="text-3xl" on:click={next}>🍳</button>
+</div>
