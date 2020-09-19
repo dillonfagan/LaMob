@@ -1,7 +1,7 @@
 <script>
 	import { setContext, onDestroy } from 'svelte';
-	import Background from './background';
-	import State from './state';
+	import Background from './lib/background';
+	import State from './lib/state';
 
 	const config = {
 		mobbers: {

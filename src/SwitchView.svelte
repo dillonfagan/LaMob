@@ -1,8 +1,8 @@
 <script>
 	import { getContext, setContext } from 'svelte';
-	import State from './state';
-	import Music from './music.js';
-	import Background from './background';
+	import State from './lib/state';
+	import Music from './lib/music';
+	import Background from './lib/background';
 
 	Background.set("red-800");
 	Music.play();

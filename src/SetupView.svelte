@@ -1,7 +1,7 @@
 <script>
 	import { getContext, setContext } from 'svelte';
-	import State from './state';
-	import { listMobbers } from './mobbers';
+	import State from './lib/state';
+	import { listMobbers } from './lib/mobbers';
 
 	let mobbersInput = "";
 	let timeInput = 7;

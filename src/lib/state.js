@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
-import SetupView from './SetupView.svelte';
-import TimerView from './TimerView.svelte';
-import SwitchView from './SwitchView.svelte';
+import SetupView from '../SetupView.svelte';
+import TimerView from '../TimerView.svelte';
+import SwitchView from '../SwitchView.svelte';
 
 const view = writable(SetupView);
 

@@ -1,8 +1,8 @@
 <script>
 	import { getContext } from 'svelte';
-	import { minutesToSeconds, formatTime } from './time';
-	import State from './state';
-	import Background from './background';
+	import { minutesToSeconds, formatTime } from './lib/time';
+	import State from './lib/state';
+	import Background from './lib/background';
 
 	Background.set("purple-700");
 	const config = getContext('config');
