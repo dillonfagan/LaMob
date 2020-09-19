@@ -1,6 +1,6 @@
 <script>
 	import { getContext } from 'svelte';
-	import { minutesToSeconds, formatTime } from './timer';
+	import { minutesToSeconds, formatTime } from './time';
 	import State from './state';
 	import Background from './background';
 
