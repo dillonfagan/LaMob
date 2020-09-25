@@ -1,4 +1,4 @@
-const { formatTime, minutesToSeconds } = require('./timer');
+const { formatTime, minutesToSeconds, calculateTurns } = require('./time');
 
 test.each([
 	[0, "00:00"],
@@ -20,10 +20,11 @@ test.each([
 	expect(minutesToSeconds(minutes)).toBe(expected);
 });
 
-test('turns', () => {
-	const turnLength = 7;
-	const numberOfTurns = Math.floor(50 / turnLength);
-	const eggs = '🥚'.repeat(numberOfTurns);
-
-	expect(eggs).toBe('🥚🥚🥚🥚🥚🥚🥚');
+test.each([
+	[7, 7],
+	[8, 6],
+	[6, 8]
+])
+('turns', (minutes, expected) => {
+	expect(calculateTurns(minutes)).toBe(expected);
 });
