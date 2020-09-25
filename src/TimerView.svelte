@@ -26,8 +26,12 @@
 			return;
 		}
 		time -= 1;
-	}, 1000);
+	}, 10);
 </script>
+
+<svelte:head>
+	<title>La Mob | {mobber.toUpperCase()}</title>
+</svelte:head>
 
 <div class="text-3xl text-white text-center uppercase italic">{mobber}</div>
 <div class="text-6xl text-white w-full text-center">{formatTime(time)}</div>
