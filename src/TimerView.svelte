@@ -6,8 +6,11 @@
 
 	Background.set("purple-700");
 	const config = getContext('config');
+	config.turnsRemaining -= 1;
+
 	const mobberIndex = config.mobbers.index;
 	const mobber = config.mobbers.list[mobberIndex];
+	const eggs = '🥚'.repeat(config.turnsRemaining);
 
 	let nextMobberIndex = mobberIndex + 1;
 	if (nextMobberIndex > config.mobbers.list.length - 1)
@@ -19,13 +22,17 @@
 	let interval = setInterval(() => {
 		if (time === 0) {
 			clearInterval(interval);
-			State.finishTurn();
+			if (config.turnsRemaining > 0)
+				State.finishTurn();
+			else
+				State.finishRotation();
 			return;
 		}
 		time -= 1;
-	}, 1000);
+	}, 10);
 </script>
 
 <div class="text-3xl text-white text-center uppercase italic">{mobber}</div>
 <div class="text-6xl text-white w-full text-center">{formatTime(time)}</div>
-<div class="text-2xl text-purple-900 text-center uppercase">{nextMobber} 🥚</div>
+<div class="text-2xl text-purple-900 text-center uppercase">{nextMobber}</div>
+<div class="text-xl text-center">{eggs}</div>

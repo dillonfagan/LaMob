@@ -15,6 +15,10 @@ function startRotation() {
 	view.set(TimerView);
 }
 
+function finishRotation() {
+	view.set(SetupView);
+}
+
 function finishTurn() {
 	view.set(SwitchView);
 }
@@ -26,6 +30,7 @@ function nextTurn() {
 export default {
 	subscribe,
 	startRotation,
+	finishRotation,
 	finishTurn,
 	nextTurn
 }

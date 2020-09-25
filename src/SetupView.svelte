@@ -1,8 +1,11 @@
 <script>
 	import { getContext, setContext } from 'svelte';
 	import State from './lib/state';
+	import Background from './lib/background';
 	import { calculateTurns } from './lib/time';
 	import { listMobbers } from './lib/mobbers';
+
+	Background.set("green-600");
 
 	let mobbersInput = "";
 	let timeInput = 7;
