@@ -22,11 +22,14 @@
 	let interval = setInterval(() => {
 		if (time === 0) {
 			clearInterval(interval);
-			State.finishTurn();
+			if (config.turnsRemaining > 0)
+				State.finishTurn();
+			else
+				State.finishRotation();
 			return;
 		}
 		time -= 1;
-	}, 1000);
+	}, 10);
 </script>
 
 <svelte:head>

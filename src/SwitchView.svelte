@@ -21,10 +21,7 @@
 		config.mobbers.index = nextMobberIndex;
 		setContext('config', config);
 
-		if (config.turnsRemaining > 0)
-			State.nextTurn();
-		else
-			State.finishRotation();
+		State.nextTurn();
 	}
 </script>
 
