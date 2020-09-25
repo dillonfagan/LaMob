@@ -26,7 +26,7 @@
 			return;
 		}
 		time -= 1;
-	}, 10);
+	}, 1000);
 </script>
 
 <div class="text-3xl text-white text-center uppercase italic">{mobber}</div>
