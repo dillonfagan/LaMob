@@ -2,6 +2,7 @@
 	import { formatTime } from './lib/time';
 	import Background from './lib/background';
 	import State from './lib/state';
+	import { getContext } from 'svelte';
 
 	Background.set("green-600");
 
@@ -9,6 +10,8 @@
 	let interval = setInterval(() => {
 		if (time === 0) {
 			clearInterval(interval);
+			const config = getContext('config');
+			config.turnsRemaining = config.turns;
 			State.finishTurn();
 			return;
 		}
