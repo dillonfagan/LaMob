@@ -22,10 +22,7 @@
 	let interval = setInterval(() => {
 		if (time === 0) {
 			clearInterval(interval);
-			if (config.turnsRemaining > 0)
-				State.finishTurn();
-			else
-				State.finishRotation();
+			State.finishTurn();
 			return;
 		}
 		time -= 1;
