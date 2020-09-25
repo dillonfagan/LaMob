@@ -8,4 +8,8 @@ function formatTime(timeInSeconds) {
 	return `${padWithZeroes(minutes)}:${padWithZeroes(remainingSeconds)}`;
 }
 
-module.exports = { minutesToSeconds, formatTime }
+function calculateTurns(turnLength) {
+	return Math.floor(50 / turnLength);
+}
+
+module.exports = { minutesToSeconds, formatTime, calculateTurns }

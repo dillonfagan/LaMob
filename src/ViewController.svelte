@@ -8,7 +8,9 @@
 			list: [],
 			index: 0
 		},
-		turnLength: 0
+		turnLength: 0,
+		turns: 0,
+		turnsRemaining: 0
 	};
 
 	setContext('config', config);
