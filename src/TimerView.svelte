@@ -10,7 +10,8 @@
 
 	const mobberIndex = config.mobbers.index;
 	const mobber = config.mobbers.list[mobberIndex];
-	const eggs = '🥚'.repeat(config.turnsRemaining);
+	const crackedEggs = '🐣'.repeat(config.turns - config.turnsRemaining)
+	const eggs = crackedEggs + '🥚'.repeat(config.turnsRemaining);
 
 	let nextMobberIndex = mobberIndex + 1;
 	if (nextMobberIndex > config.mobbers.list.length - 1)
