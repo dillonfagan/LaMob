@@ -37,8 +37,8 @@
 	on:mouseenter={Music.stop}
 />
 
+<button class="text-xl top-0 left-0 mt-2 ml-2 absolute bg-gray-200 rounded-full px-4 py-1" on:click={skip}>Skip</button>
 <div class="flex flex-col justify-center">
 	<div class="text-4xl text-white text-center uppercase italic">{nextMobber}</div>
 	<button class="text-3xl" on:click={next}>🍳</button>
-	<button class="text-3xl" on:click={skip}>skip</button>
 </div>
