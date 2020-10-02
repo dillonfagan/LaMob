@@ -17,18 +17,18 @@
 	const nextMobber = config.mobbers.list[nextMobberIndex];
 
 	function next() {
-		Music.stop();
-		config.mobbers.index = nextMobberIndex;
-		setContext('config', config);
-
+		advance();
 		State.nextTurn();
 	}
 
-	function skip() {
+	function advance() {
 		Music.stop();
 		config.mobbers.index = nextMobberIndex;
 		setContext('config', config);
+	}
 
+	function skip() {
+		advance();
 		State.skipTurn();
 	}
 </script>
