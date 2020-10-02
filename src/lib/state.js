@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 import SetupView from '../SetupView.svelte';
 import TimerView from '../TimerView.svelte';
+import SkipView from  '../SkipView.svelte';
 import SwitchView from '../SwitchView.svelte';
 import EndRotationView from '../EndRotationView.svelte';
 import BreakView from '../BreakView.svelte';
@@ -33,11 +34,16 @@ function nextTurn() {
 	view.set(TimerView);
 }
 
+function skipTurn() {
+	view.set(SkipView);
+}
+
 export default {
 	subscribe,
 	startRotation,
 	finishRotation,
 	startBreak,
 	finishTurn,
-	nextTurn
+	nextTurn,
+	skipTurn
 }

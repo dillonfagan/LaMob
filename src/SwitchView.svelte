@@ -23,6 +23,14 @@
 
 		State.nextTurn();
 	}
+
+	function skip() {
+		Music.stop();
+		config.mobbers.index = nextMobberIndex;
+		setContext('config', config);
+
+		State.skipTurn();
+	}
 </script>
 
 <svelte:body
@@ -32,4 +40,5 @@
 <div class="flex flex-col justify-center">
 	<div class="text-4xl text-white text-center uppercase italic">{nextMobber}</div>
 	<button class="text-3xl" on:click={next}>🍳</button>
+	<button class="text-3xl" on:click={skip}>skip</button>
 </div>

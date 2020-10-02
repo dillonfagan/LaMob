@@ -30,7 +30,7 @@
 			return;
 		}
 		time -= 1;
-	}, 1000);
+	}, 10);
 </script>
 
 <svelte:head>
