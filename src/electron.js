@@ -10,6 +10,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 900,
         height: 680,
+        autoHideMenuBar: true
     });
 
     mainWindow.loadURL(`file://${path.join(__dirname, '../public/index.html')}`);
