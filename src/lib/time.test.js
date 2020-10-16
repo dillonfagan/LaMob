@@ -1,4 +1,4 @@
-const { formatTime, minutesToSeconds, calculateTurns } = require('./time');
+const { formatTime, minutesToSeconds, calculateTurns, validTime } = require('./time');
 
 test.each([
 	[0, "00:00"],
@@ -30,10 +30,6 @@ test.each([
 });
 
 test('valid time input', () => {
-	function validTime(time) {
-		return time > 0 && time % 1 == 0;
-	}
-
 	expect(validTime(-1)).toBe(false);
 	expect(validTime(0)).toBe(false);
 	expect(validTime(5)).toBe(true);

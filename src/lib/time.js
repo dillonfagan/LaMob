@@ -12,4 +12,8 @@ function calculateTurns(turnLength) {
 	return Math.floor(50 / turnLength);
 }
 
-module.exports = { minutesToSeconds, formatTime, calculateTurns }
+function validTime(time) {
+	return time > 0 && time % 1 == 0;
+}
+
+module.exports = { minutesToSeconds, formatTime, calculateTurns, validTime }
