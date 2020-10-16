@@ -28,3 +28,16 @@ test.each([
 ('turns', (minutes, expected) => {
 	expect(calculateTurns(minutes)).toBe(expected);
 });
+
+test('valid time input', () => {
+	function validTime(time) {
+		return time > 0 && time % 1 == 0;
+	}
+
+	expect(validTime(-1)).toBe(false);
+	expect(validTime(0)).toBe(false);
+	expect(validTime(5)).toBe(true);
+	expect(validTime(5.5)).toBe(false);
+	expect(validTime(7)).toBe(true);
+	expect(validTime(7.1)).toBe(false);
+});
