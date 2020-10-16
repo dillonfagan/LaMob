@@ -9,18 +9,17 @@
 
 	let timeField;
 	let mobbersInput = "";
-	let timeInput = 7;
 
 	function start() {
-		if (!validTime(timeInput)) {
-			timeInput = "";
+		if (!validTime(timeField.value)) {
+			timeField.value = "";
 			timeField.placeholder = "❌ Enter whole number";
 			return;
 		}
 		const config = getContext('config');
 		config.mobbers.list = listMobbers(mobbersInput);
-		config.turnLength = timeInput;
-		config.turns = calculateTurns(timeInput);
+		config.turnLength = timeField.value;
+		config.turns = calculateTurns(timeField.value);
 		config.turnsRemaining = config.turns;
 
 		setContext('config', config);
@@ -38,7 +37,7 @@
 	/>
 	<input
 		bind:this={timeField}
-		bind:value={timeInput}
+		value="7"
 		class="py-2 px-4 text-xl text-white placeholder-green-900 placeholder-bold bg-transparent border-b-2"
 		type="number"
 		min="1" max="50"
