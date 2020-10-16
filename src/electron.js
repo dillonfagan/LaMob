@@ -8,6 +8,7 @@ let mainWindow;
 function createWindow() {
     const mode = process.env.NODE_ENV;
     mainWindow = new BrowserWindow({
+        icon: __dirname + '/public/fried-egg.ico',
         width: 900,
         height: 680,
         autoHideMenuBar: true
