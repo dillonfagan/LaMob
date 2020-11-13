@@ -9,11 +9,13 @@
 
 	let timeField;
 	let mobbersInput = "";
+	let validTimeEntered = true;
 
 	function start() {
 		if (!validTime(timeField.value)) {
+			validTimeEntered = false;
 			timeField.value = "";
-			timeField.placeholder = "❌ Enter whole number";
+			timeField.placeholder = "Enter whole number";
 			return;
 		}
 		const config = getContext('config');
@@ -55,8 +57,15 @@
 		bind:this={timeField}
 		value="7"
 		class="py-2 px-4 text-xl text-white placeholder-green-900 placeholder-bold bg-transparent border-b-2"
+		class:invalid={!validTimeEntered}
 		type="number"
 		min="1" max="50"
 	/>
 	<button on:click={start} class="p-2 mt-4 text-3xl">🚀</button>
 </div>
+
+<style>
+	.invalid {
+		@apply border-red-500;
+	}
+</style>
