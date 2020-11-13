@@ -3,6 +3,7 @@
 	import State from './lib/state';
 	import Background from './lib/background';
 	import ShuffleIcon from './components/icons/Shuffle.svelte';
+	import RocketIcon from './components/icons/Rocket.svelte';
 	import { calculateTurns, validTime } from './lib/time';
 	import { listMobbers, sortMobbers } from './lib/mobbers';
 
@@ -56,7 +57,9 @@
 		type="number"
 		min="1" max="50"
 	/>
-	<button on:click={start} class="p-2 mt-4 text-3xl">🚀</button>
+	<div class="mt-5">
+		<RocketIcon on:click={start} />
+	</div>
 </div>
 
 <style>
