@@ -45,7 +45,7 @@
 			bind:value={mobbersInput}
 			class="py-2 px-4 text-xl text-white placeholder-green-900 bg-transparent"
 		/>
-		<svg on:click={shuffle} xmlns="http://www.w3.org/2000/svg" class="text-green-900 cursor-pointer" width="36" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+		<svg on:click={shuffle} xmlns="http://www.w3.org/2000/svg" class="text-green-900 cursor-pointer" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
 			<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
 			<path d="M3 17h2.397a5 5 0 0 0 4.096 -2.133l.177 -.253m3.66 -5.227l.177 -.254a5 5 0 0 1 4.096 -2.133h3.397" />
 			<path d="M18 4l3 3l-3 3" />
