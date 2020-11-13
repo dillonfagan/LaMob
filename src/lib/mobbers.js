@@ -6,4 +6,8 @@ function listMobbers(rawMobbersInput) {
 		.split(',');
 }
 
-module.exports = { listMobbers }
+function sortMobbers(mobberList) {
+	return mobberList.sort((a, b) => 0.5 - Math.random())
+}
+
+module.exports = { listMobbers, sortMobbers }
