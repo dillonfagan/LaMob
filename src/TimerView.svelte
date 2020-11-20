@@ -3,6 +3,7 @@
 	import { minutesToSeconds, formatTime } from './lib/time';
 	import State from './lib/state';
 	import Background from './lib/background';
+	import EggIcon from './components/icons/Egg.svelte';
 
 	Background.set("purple-700");
 	const config = getContext('config');
@@ -10,8 +11,6 @@
 
 	const mobberIndex = config.mobbers.index;
 	const mobber = config.mobbers.list[mobberIndex];
-	const crackedEggs = '🐣'.repeat(config.turns - config.turnsRemaining)
-	const eggs = crackedEggs + '🥚'.repeat(config.turnsRemaining);
 
 	let nextMobberIndex = mobberIndex + 1;
 	if (nextMobberIndex > config.mobbers.list.length - 1)
@@ -30,7 +29,7 @@
 			return;
 		}
 		time -= 1;
-	}, 1000);
+	}, 10);
 </script>
 
 <svelte:head>
@@ -40,4 +39,9 @@
 <div class="text-3xl text-white text-center uppercase italic">{mobber}</div>
 <div class="text-6xl text-white w-full text-center">{formatTime(time)}</div>
 <div class="text-2xl text-purple-900 text-center uppercase">{nextMobber}</div>
-<div class="text-xl text-center">{eggs}</div>
+<div class="flex flex-row justify-center">
+	{#each Array(config.turnsRemaining) as _}
+		<EggIcon />
+	{/each}
+</div>
+
